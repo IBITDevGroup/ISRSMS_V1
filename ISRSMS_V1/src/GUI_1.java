@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 
+//PENIS PENIS PENIS PENIS HURENSOHN HURENSCHMOCK
+
 //Creates First Main GUI For ISRSMS Project!
 
 public class GUI_1 {
@@ -37,7 +39,7 @@ public class GUI_1 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1400, 95w0);
+		frame.setBounds(100, 100, 1400, 950);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 	}
