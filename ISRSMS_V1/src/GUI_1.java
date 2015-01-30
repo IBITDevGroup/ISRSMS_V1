@@ -3,7 +3,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 
-//PENIS PENIS PENIS PENIS HURENSOHN HURENSCHMOCK
 
 //Creates First Main GUI For ISRSMS Project!
 
