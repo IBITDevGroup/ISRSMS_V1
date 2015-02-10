@@ -3,9 +3,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 
-
-//Creates First Main GUI For ISRSMS Project!
-
 public class GUI_1 {
 
 	private JFrame frame;
@@ -38,9 +35,8 @@ public class GUI_1 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 1400, 950);
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
 	}
 
 }
