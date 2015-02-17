@@ -95,7 +95,7 @@ public class authentication_gui extends JDialog {
 					auth_success_dialog success_dialog = new auth_success_dialog(); 
 					
 					//temporary if else loop for authentication (will be replaced by database-based system hardcoded in another class
-					//Not working yet! Unsure why!
+					//Not working yet! Unsure why!?
 					if (user == "Tim" && pswd == "Kuchen" ){
 					
 					//Opens authentication success dialog from class	
