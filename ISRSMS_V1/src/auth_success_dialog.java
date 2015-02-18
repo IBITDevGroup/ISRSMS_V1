@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
+//WIP PRLIMINARY COMPLETION!
 public class auth_success_dialog extends JDialog {
 
 	/**

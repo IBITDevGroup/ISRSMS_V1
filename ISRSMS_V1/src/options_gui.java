@@ -2,7 +2,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JDialog;
 
-
+//INCOMPLETE; MAJOR WIP
 public class options_gui extends JDialog {
 
 	/**

@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-
+//INCOMPLETE! PROBLEM WITH JPASSWORDFIELD! MIGHT BE CHAR[] VALUE
 public class authentication_gui extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -68,7 +68,7 @@ public class authentication_gui extends JDialog {
 		
 		JLabel lblerror = new JLabel("");
 		lblerror.setForeground(Color.RED);
-		lblerror.setBounds(126, 94, 280, 14);
+		lblerror.setBounds(110, 95, 280, 14);
 		contentPanel.add(lblerror);
 		{
 			JPanel buttonPane = new JPanel();

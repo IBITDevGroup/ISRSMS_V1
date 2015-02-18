@@ -2,7 +2,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JDialog;
 
-
+//INCOMPLETE!!!
 public class add_entry_gui extends JDialog {
 
 	/**
