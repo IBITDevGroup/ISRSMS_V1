@@ -1,0 +1,12 @@
+
+For fullscreen:
+
+Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+					frame.setBounds(0, 0,screen.width,screen.height - 30);
+					frame.setExtendedState(Frame.MAXIMIZED_BOTH);
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					frame.getContentPane().setLayout(null);
+					
+					
+					
+					

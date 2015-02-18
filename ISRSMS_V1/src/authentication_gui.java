@@ -10,7 +10,6 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Color;
 
 
@@ -45,29 +44,31 @@ public class authentication_gui extends JDialog {
 		contentPanel.setLayout(null);
 		
 		password = new JPasswordField();
-		password.setBounds(107, 57, 217, 20);
+		password.setToolTipText("Enter your password here");
+		password.setBounds(130, 63, 217, 20);
 		contentPanel.add(password);
 		
 		username = new JTextField();
-		username.setBounds(107, 32, 217, 20);
+		username.setToolTipText("Enter your username here");
+		username.setBounds(130, 32, 217, 20);
 		contentPanel.add(username);
 		username.setColumns(10);
 		
 		JLabel lblUserName = new JLabel("User Name");
-		lblUserName.setBounds(30, 35, 67, 14);
+		lblUserName.setBounds(30, 35, 90, 14);
 		contentPanel.add(lblUserName);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(30, 60, 46, 14);
+		lblPassword.setBounds(30, 60, 90, 14);
 		contentPanel.add(lblPassword);
 		
-		JLabel lblIsrSmsLogin = DefaultComponentFactory.getInstance().createTitle("ISR SMS Login");
-		lblIsrSmsLogin.setBounds(178, 11, 102, 14);
+		JLabel lblIsrSmsLogin = new JLabel("ISR SMS Login");
+		lblIsrSmsLogin.setBounds(190, 11, 102, 14);
 		contentPanel.add(lblIsrSmsLogin);
 		
 		JLabel lblerror = new JLabel("");
 		lblerror.setForeground(Color.RED);
-		lblerror.setBounds(107, 85, 280, 14);
+		lblerror.setBounds(126, 94, 280, 14);
 		contentPanel.add(lblerror);
 		{
 			JPanel buttonPane = new JPanel();
@@ -75,6 +76,8 @@ public class authentication_gui extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.setForeground(Color.BLACK);
+				okButton.setToolTipText("Press after finishing entry to proceed!");
 				okButton.addActionListener(new ActionListener() {
 					//Actionperform for ok button
 					public void actionPerformed(ActionEvent e) {
@@ -91,12 +94,14 @@ public class authentication_gui extends JDialog {
 					//Initializes error message string 
 					String x = "Wrong Username or password! Try Again!";
 					
-					//Creates object form authentication success dialog class
-					auth_success_dialog success_dialog = new auth_success_dialog(); 
+					
 					
 					//temporary if else loop for authentication (will be replaced by database-based system hardcoded in another class
 					//Not working yet! Unsure why!?
 					if (user == "Tim" && pswd == "Kuchen" ){
+					
+					//Creates object form authentication success dialog class
+					auth_success_dialog success_dialog = new auth_success_dialog(); 
 					
 					//Opens authentication success dialog from class	
 					success_dialog.setVisible(true);	
@@ -121,6 +126,7 @@ public class authentication_gui extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setToolTipText("Closes login window and cancels operation");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						
