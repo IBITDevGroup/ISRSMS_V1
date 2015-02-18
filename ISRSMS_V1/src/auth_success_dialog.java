@@ -1,8 +1,12 @@
 import java.awt.EventQueue;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -42,7 +46,16 @@ public class auth_success_dialog extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 				
 				gui_main_landing main = new gui_main_landing();
-				main.setVisible(true);
+				main.setModal(isModal());
+				
+				//enables fullscreen and OS specific look and feel
+				GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+				GraphicsDevice gd = env.getDefaultScreenDevice();
+				gd.setFullScreenWindow(main);
+				Rectangle bounds = env.getMaximumWindowBounds();
+				main.setBounds(bounds);
+				
+				main.setVisible(true);				
 				
 				dispose();
 				
