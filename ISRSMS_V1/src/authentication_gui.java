@@ -75,7 +75,7 @@ public class authentication_gui extends JDialog {
 		JLabel labelimg = new JLabel("");		
 		ImageIcon img_logo = new ImageIcon("graphics_resources/isr1.png"); //creates ImageIcon object
 		labelimg.setIcon(img_logo);				
-		labelimg.setBounds(349, 31, 75, 52);
+		labelimg.setBounds(357, 31, 75, 52);
 		contentPanel.add(labelimg);
 		{
 			JPanel buttonPane = new JPanel();
