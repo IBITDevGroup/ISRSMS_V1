@@ -98,7 +98,7 @@ public class authentication_gui extends JDialog {
 					
 					//temporary if else loop for authentication (will be replaced by database-based system hardcoded in another class
 					//Not working yet! Unsure why!?
-					if (user == "Tim" && pswd == "Kuchen" ){
+					if (user.equals("Tim") && pswd.equals("hallo")){
 					
 					//Creates object form authentication success dialog class
 					auth_success_dialog success_dialog = new auth_success_dialog(); 
@@ -114,7 +114,7 @@ public class authentication_gui extends JDialog {
 					else{ 
 						
 						//Sets error message text
-						lblerror.setText(x);						
+						lblerror.setText(pswd);						
 					}
 						
 						

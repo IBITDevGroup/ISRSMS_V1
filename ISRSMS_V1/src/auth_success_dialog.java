@@ -1,8 +1,13 @@
 import java.awt.EventQueue;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import javax.swing.UIManager;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -41,9 +46,19 @@ public class auth_success_dialog extends JDialog {
 		btnOk.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				
+				GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+				GraphicsDevice gd = env.getDefaultScreenDevice();
+				
+				
+
 				gui_main_landing main = new gui_main_landing();
 				main.setVisible(true);
-				
+				main.setModal(true);
+				main.setResizable(false);					
+				gd.setFullScreenWindow(main);
+				Rectangle bounds = env.getMaximumWindowBounds();
+				main.setBounds(bounds);
 				dispose();
 				
 			}
