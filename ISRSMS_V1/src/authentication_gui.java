@@ -1,6 +1,6 @@
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import java.awt.*;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -8,11 +8,12 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-//INCOMPLETE! PROBLEM WITH JPASSWORDFIELD! MIGHT BE CHAR[] VALUE
+
 public class authentication_gui extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
@@ -70,6 +71,12 @@ public class authentication_gui extends JDialog {
 		lblerror.setForeground(Color.RED);
 		lblerror.setBounds(110, 95, 280, 14);
 		contentPanel.add(lblerror);
+		
+		JLabel labelimg = new JLabel("");		
+		ImageIcon img_logo = new ImageIcon("graphics_resources/isr1.png"); //creates ImageIcon object
+		labelimg.setIcon(img_logo);				
+		labelimg.setBounds(349, 31, 75, 52);
+		contentPanel.add(labelimg);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
