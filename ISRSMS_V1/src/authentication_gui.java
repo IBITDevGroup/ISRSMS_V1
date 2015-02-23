@@ -32,6 +32,7 @@ public class authentication_gui extends JDialog {
 	 * Create the dialog.
 	 */
 	
+	//added test comment
 	//Initializes global connection variable
 	Connection loginconnection = null;
 	
