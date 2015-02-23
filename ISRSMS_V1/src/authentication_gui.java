@@ -1,14 +1,8 @@
 import java.awt.*;
+import java.sql.*;
+import javax.swing.*;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -37,7 +31,18 @@ public class authentication_gui extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+	
+	//Initializes global connection variable
+	Connection loginconnection = null;
+	
+	
+	
 	public authentication_gui() {
+		
+		//Calls sqlite connection class for loginconnection
+		loginconnection = SQLite_login_connector.logindb_connection();
+		
+		
 		setBounds(100, 100, 450, 180);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

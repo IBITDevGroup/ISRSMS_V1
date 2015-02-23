@@ -19,6 +19,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.JInternalFrame;
+import javax.swing.JTabbedPane;
+import javax.swing.JSpinner;
+import javax.swing.JFormattedTextField;
 
 //INCOMPLTE; MAJOR WIP
 public class gui_main_landing extends JDialog {
@@ -123,9 +128,11 @@ public class gui_main_landing extends JDialog {
 		menuBar.add(mnHelp);
 		
 		JButton btnSaveAll = new JButton("Save All");
+		btnSaveAll.setBackground(Color.WHITE);
 		menuBar.add(btnSaveAll);
 		
 		JButton btnExit = new JButton("Exit");
+		btnExit.setBackground(Color.WHITE);
 		menuBar.add(btnExit);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
