@@ -1,12 +1,23 @@
 
 For fullscreen:
-
+//Option 1
 Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 					frame.setBounds(0, 0,screen.width,screen.height - 30);
 					frame.setExtendedState(Frame.MAXIMIZED_BOTH);
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.getContentPane().setLayout(null);
+
+//Option 2
+
+GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+					GraphicsDevice gd = env.getDefaultScreenDevice();
 					
+					main.setVisible(true);
+					main.setModal(true);
+					main.setResizable(false);					
+					gd.setFullScreenWindow(main);
+					Rectangle bounds = env.getMaximumWindowBounds();
+					main.setBounds(bounds);					
 					
 					
 					

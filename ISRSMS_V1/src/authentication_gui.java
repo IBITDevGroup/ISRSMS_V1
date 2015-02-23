@@ -75,7 +75,7 @@ public class authentication_gui extends JDialog {
 		JLabel labelimg = new JLabel("");		
 		ImageIcon img_logo = new ImageIcon("graphics_resources/isr1.png"); //creates ImageIcon object
 		labelimg.setIcon(img_logo);				
-		labelimg.setBounds(349, 31, 75, 52);
+		labelimg.setBounds(357, 31, 75, 52);
 		contentPanel.add(labelimg);
 		{
 			JPanel buttonPane = new JPanel();
@@ -83,17 +83,18 @@ public class authentication_gui extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
-				okButton.setForeground(Color.BLACK);
+				okButton.setBackground(Color.GRAY);
+				okButton.setForeground(Color.WHITE);
 				okButton.setToolTipText("Press after finishing entry to proceed!");
 				okButton.addActionListener(new ActionListener() {
-					//Actionperform for ok button
+					//ActionPerform for OK button
 					public void actionPerformed(ActionEvent e) {
 					
-					//declares password and username strings	
+					//declares password and user name strings	
 					String user;
 					char[] temp;
 					
-					//fetches password and username from jtextfields
+					//fetches password and user name from JTextFields
 					user = username.getText();
 					temp = password.getPassword();
 					String pswd = new String(temp);
@@ -103,26 +104,39 @@ public class authentication_gui extends JDialog {
 					
 					
 					
-					//temporary if else loop for authentication (will be replaced by database-based system hardcoded in another class
-					//Not working yet! Unsure why!?
+					//temporary if else loop for authentication (will be replaced by database-based system hard-coded in another class
 					if (user.equals("Tim") && pswd.equals("hallo")){
 					
-					//Creates object form authentication success dialog class
-					auth_success_dialog success_dialog = new auth_success_dialog(); 
+
 					
-					//Opens authentication success dialog from class	
-					success_dialog.setVisible(true);	
-					
+						
 					//disposes of authentication GUI, purges it from memory
-					dispose();					
-						
+					dispose();	
+					
+					//Opens Main Landing GUI in full screen mode
+					GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+					GraphicsDevice gd = env.getDefaultScreenDevice();
+					
+					gui_main_landing main = new gui_main_landing();
+					main.setVisible(true);
+					main.setModal(true);
+					main.setResizable(false);					
+					gd.setFullScreenWindow(main);
+					Rectangle bounds = env.getMaximumWindowBounds();
+					main.setBounds(bounds);
+								
+					
+									
+					
 					}
 						
-					else{ 
-						
+					
+					
+					
+					else{ 					
 						//Sets error message text
-						lblerror.setText(x);						
-					}
+						lblerror.setText(x);     }
+					
 						
 						
 					}
@@ -133,6 +147,8 @@ public class authentication_gui extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setForeground(Color.WHITE);
+				cancelButton.setBackground(Color.GRAY);
 				cancelButton.setToolTipText("Closes login window and cancels operation");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {

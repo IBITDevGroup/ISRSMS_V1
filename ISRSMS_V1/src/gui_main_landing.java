@@ -14,6 +14,9 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
 
 //INCOMPLTE; MAJOR WIP
 public class gui_main_landing extends JDialog {
@@ -36,7 +39,9 @@ public class gui_main_landing extends JDialog {
 					gd.setFullScreenWindow(dialog);
 					Rectangle bounds = env.getMaximumWindowBounds();
 					dialog.setBounds(bounds);
-				  } 
+					
+				  
+				} 
 				
 				   catch (Exception e) {
 					e.printStackTrace();
@@ -45,22 +50,41 @@ public class gui_main_landing extends JDialog {
 		});
 	}
 
+	
+
 	/**
 	 * Create the dialog.
 	 */
 	public gui_main_landing() {
-		setBounds(100, 100, 450, 300);
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		setBounds(0, 0,screen.width,screen.height - 30);		
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
+		
+		JMenu mnOptions = new JMenu("Options");
+		menuBar.add(mnOptions);
+		
+		JMenu mnView = new JMenu("View");
+		menuBar.add(mnView);
+		
+		JMenu mnHelp = new JMenu("Help");
+		menuBar.add(mnHelp);
+		
 		JButton btnExit = new JButton("Exit");
+		menuBar.add(btnExit);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				dispose();
 				
 			}
 		});
-		btnExit.setBounds(335, 11, 89, 23);
-		getContentPane().add(btnExit);
 
 	}
 }
