@@ -17,6 +17,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
+import javax.swing.JSeparator;
+import javax.swing.ImageIcon;
 
 //INCOMPLTE; MAJOR WIP
 public class gui_main_landing extends JDialog {
@@ -67,6 +69,45 @@ public class gui_main_landing extends JDialog {
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
+		JMenu mnNew = new JMenu("New");
+		ImageIcon new_icon = new ImageIcon("graphics_resources/new.png");
+		mnNew.setIcon(new_icon);
+		mnFile.add(mnNew);
+		
+		JMenuItem mntmOpen = new JMenuItem("Open");
+		mntmOpen.setIcon(new ImageIcon(gui_main_landing.class.getResource("/javax/swing/plaf/metal/icons/ocean/upFolder.gif")));
+		mnFile.add(mntmOpen);
+		
+		JSeparator separator = new JSeparator();
+		mnFile.add(separator);
+		
+		JMenuItem mntmUndo = new JMenuItem("Undo");
+		mntmUndo.setIcon(new ImageIcon(gui_main_landing.class.getResource("/com/sun/javafx/scene/web/skin/Undo_16x16_JFX.png")));
+		mnFile.add(mntmUndo);
+		
+		JMenuItem mntmRedo = new JMenuItem("Redo                               ");
+		mntmRedo.setIcon(new ImageIcon(gui_main_landing.class.getResource("/com/sun/javafx/scene/web/skin/Redo_16x16_JFX.png")));
+		mnFile.add(mntmRedo);
+		
+		JSeparator separator_2 = new JSeparator();
+		mnFile.add(separator_2);
+		
+		JMenuItem mntmSaveAs = new JMenuItem("Save As");
+		mntmSaveAs.setIcon(new ImageIcon(gui_main_landing.class.getResource("/javax/swing/plaf/metal/icons/ocean/floppy.gif")));
+		mnFile.add(mntmSaveAs);
+		
+		JMenuItem mntmSave = new JMenuItem("Save");
+		mntmSave.setIcon(new ImageIcon(gui_main_landing.class.getResource("/javax/swing/plaf/metal/icons/ocean/hardDrive.gif")));
+		mnFile.add(mntmSave);
+		
+		JSeparator separator_1 = new JSeparator();
+		mnFile.add(separator_1);
+		
+		JMenuItem mntmRefreshAll = new JMenuItem("Refresh All");
+		ImageIcon refresh_icon = new ImageIcon("graphics_resources/refresh.png");
+		mntmRefreshAll.setIcon(refresh_icon);
+		mnFile.add(mntmRefreshAll);
+		
 		JMenu mnOptions = new JMenu("Options");
 		menuBar.add(mnOptions);
 		
@@ -75,6 +116,9 @@ public class gui_main_landing extends JDialog {
 		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
+		
+		JButton btnSaveAll = new JButton("Save All");
+		menuBar.add(btnSaveAll);
 		
 		JButton btnExit = new JButton("Exit");
 		menuBar.add(btnExit);
