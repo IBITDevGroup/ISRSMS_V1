@@ -19,6 +19,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.JInternalFrame;
+import javax.swing.JTabbedPane;
+import javax.swing.JSpinner;
+import javax.swing.JFormattedTextField;
 
 //INCOMPLTE; MAJOR WIP
 public class gui_main_landing extends JDialog {
@@ -74,6 +79,11 @@ public class gui_main_landing extends JDialog {
 		mnNew.setIcon(new_icon);
 		mnFile.add(mnNew);
 		
+		JMenuItem mntmEntry = new JMenuItem("Entry            ");
+		ImageIcon entry_icon = new ImageIcon("graphics_resources/new_entry.png");
+		mntmEntry.setIcon(entry_icon);
+		mnNew.add(mntmEntry);
+		
 		JMenuItem mntmOpen = new JMenuItem("Open");
 		mntmOpen.setIcon(new ImageIcon(gui_main_landing.class.getResource("/javax/swing/plaf/metal/icons/ocean/upFolder.gif")));
 		mnFile.add(mntmOpen);
@@ -118,9 +128,11 @@ public class gui_main_landing extends JDialog {
 		menuBar.add(mnHelp);
 		
 		JButton btnSaveAll = new JButton("Save All");
+		btnSaveAll.setBackground(Color.WHITE);
 		menuBar.add(btnSaveAll);
 		
 		JButton btnExit = new JButton("Exit");
+		btnExit.setBackground(Color.WHITE);
 		menuBar.add(btnExit);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
