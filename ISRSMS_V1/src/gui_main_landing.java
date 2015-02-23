@@ -74,6 +74,11 @@ public class gui_main_landing extends JDialog {
 		mnNew.setIcon(new_icon);
 		mnFile.add(mnNew);
 		
+		JMenuItem mntmEntry = new JMenuItem("Entry            ");
+		ImageIcon entry_icon = new ImageIcon("graphics_resources/new_entry.png");
+		mntmEntry.setIcon(entry_icon);
+		mnNew.add(mntmEntry);
+		
 		JMenuItem mntmOpen = new JMenuItem("Open");
 		mntmOpen.setIcon(new ImageIcon(gui_main_landing.class.getResource("/javax/swing/plaf/metal/icons/ocean/upFolder.gif")));
 		mnFile.add(mntmOpen);
