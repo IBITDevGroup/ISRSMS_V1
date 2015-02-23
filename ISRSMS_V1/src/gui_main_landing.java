@@ -70,6 +70,8 @@ public class gui_main_landing extends JDialog {
 		menuBar.add(mnFile);
 		
 		JMenu mnNew = new JMenu("New");
+		ImageIcon new_icon = new ImageIcon("graphics_resources/new.png");
+		mnNew.setIcon(new_icon);
 		mnFile.add(mnNew);
 		
 		JMenuItem mntmOpen = new JMenuItem("Open");
