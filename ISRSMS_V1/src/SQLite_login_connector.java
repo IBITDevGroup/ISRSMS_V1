@@ -13,7 +13,7 @@ public class SQLite_login_connector {
 			Class.forName("org.sqlite.JDBC");
 			
 			Connection conn_log = DriverManager.getConnection("jdbc:sqlite:SQLite/ISRSMS_Login.sqlite");
-			JOptionPane.showMessageDialog(null, "Connection Successful!");
+			JOptionPane.showMessageDialog(null, "Database Connection Successful!");
 			return conn_log;
 			
 		}	catch(Exception e){

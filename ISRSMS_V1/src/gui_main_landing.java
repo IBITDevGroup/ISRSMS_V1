@@ -138,12 +138,12 @@ public class gui_main_landing extends JDialog {
 		
 		JButton btnSaveAll = new JButton("Save All");
 		btnSaveAll.setForeground(Color.WHITE);
-		btnSaveAll.setBackground(Color.BLACK);
+		btnSaveAll.setBackground(Color.DARK_GRAY);
 		menuBar.add(btnSaveAll);
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.setForeground(Color.WHITE);
-		btnExit.setBackground(Color.BLACK);
+		btnExit.setBackground(Color.DARK_GRAY);
 		menuBar.add(btnExit);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
