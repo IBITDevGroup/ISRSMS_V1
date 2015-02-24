@@ -215,6 +215,14 @@ public class signup_gui extends JDialog {
 				});
 				{
 					JButton btnHelp = new JButton("help");
+					btnHelp.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {						
+							
+							signuphelp help = new signuphelp();
+							help.setVisible(true);
+							
+						}
+					});
 					buttonPane.add(btnHelp);
 				}
 				cancelButton.setActionCommand("Cancel");
