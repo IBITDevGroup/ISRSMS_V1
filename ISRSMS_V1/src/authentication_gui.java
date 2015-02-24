@@ -33,7 +33,7 @@ public class authentication_gui extends JDialog {
 	 * Create the dialog.
 	 */
 	
-	//added test comment
+	
 	//Initializes global connection variable
 	Connection loginconnection = null;
 	
@@ -144,7 +144,7 @@ public class authentication_gui extends JDialog {
                  }
 					
 				 catch(Exception f){						
-		         JOptionPane.showMessageDialog(null, f);						
+		            JOptionPane.showMessageDialog(null, f);						
 					}							
 					
 					
@@ -166,6 +166,20 @@ public class authentication_gui extends JDialog {
 						
 					}
 				});
+				
+				JButton btnSignUp = new JButton("Sign up");
+				btnSignUp.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						
+						signup_gui signup = new signup_gui();
+						signup.setVisible(true);
+						
+						
+					}
+				});
+				btnSignUp.setForeground(Color.WHITE);
+				btnSignUp.setBackground(Color.GRAY);
+				buttonPane.add(btnSignUp);
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}
