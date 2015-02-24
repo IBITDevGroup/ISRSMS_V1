@@ -17,7 +17,21 @@ GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 					main.setResizable(false);					
 					gd.setFullScreenWindow(main);
 					Rectangle bounds = env.getMaximumWindowBounds();
-					main.setBounds(bounds);					
+					main.setBounds(bounds);
+					
+					
+					
+//Standard Try/Catch Block					
+			
+			
+			try{	
+			
+		}	catch(Exception e){
+		
+		
+			JOptionPane.showMessageDialog(null, e);
+			
+		}					
 					
 					
 					

@@ -1,8 +1,9 @@
 import java.awt.*;
 import java.sql.*;
-import javax.swing.*;
 
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -93,56 +94,61 @@ public class authentication_gui extends JDialog {
 				okButton.setForeground(Color.WHITE);
 				okButton.setToolTipText("Press after finishing entry to proceed!");
 				okButton.addActionListener(new ActionListener() {
-					//ActionPerform for OK button
 					public void actionPerformed(ActionEvent e) {
 					
-					//declares password and user name strings	
 					String user;
 					char[] temp;
 					
-					//fetches password and user name from JTextFields
 					user = username.getText();
 					temp = password.getPassword();
 					String pswd = new String(temp);
 					
-					//Initializes error message string 
 					String x = "Wrong Username or password! Try Again!";
-						
 					
-					//temporary if else loop for authentication (will be replaced by database-based system hard-coded in another class
-					if (user.equals("Tim") && pswd.equals("hallo")){
-						
-						
-					//disposes of authentication GUI, purges it from memory
-					dispose();	
+				try{					
+					  //Query for sqlite db + result set.
+					  String query = "select * from login_data where username=? and password=?";					
+					  PreparedStatement pst_login = loginconnection.prepareStatement(query);
+					  pst_login.setString(1, user);
+					  pst_login.setString(2, pswd);					
+					  ResultSet results = pst_login.executeQuery();
+					  int count = 0;
+					 
+					    while(results.next()){
+						  count++;
+						  }					
 					
-					//Opens Main Landing GUI in full screen mode
-					GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
-					GraphicsDevice gd = env.getDefaultScreenDevice();
+					    if(count == 1){					    	
+					    	dispose();
+					    	//Opens Main Landing GUI in full screen mode
+					    	GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+					    	GraphicsDevice gd = env.getDefaultScreenDevice();
+					    	
+					    	gui_main_landing main = new gui_main_landing();
+					    	main.setVisible(true);
+					    	main.setModal(true);
+					    	main.setResizable(false);					
+					    	gd.setFullScreenWindow(main);
+					    	Rectangle bounds = env.getMaximumWindowBounds();
+					    	main.setBounds(bounds);
+					      }
 					
-					gui_main_landing main = new gui_main_landing();
-					main.setVisible(true);
-					main.setModal(true);
-					main.setResizable(false);					
-					gd.setFullScreenWindow(main);
-					Rectangle bounds = env.getMaximumWindowBounds();
-					main.setBounds(bounds);
-								
+					  else if (count<1){
+						  lblerror.setText(x);
+						  }	
+					    
+					 //Closes db query's connection.  
+					 results.close();
+					 pst_login.close();					    
 					
-									
+                 }
 					
-					}
-						
+				 catch(Exception f){						
+		         JOptionPane.showMessageDialog(null, f);						
+					}							
 					
 					
-					
-					else{ 					
-						//Sets error message text
-						lblerror.setText(x);     }
-					
-						
-						
-					}
+					}	
 				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);

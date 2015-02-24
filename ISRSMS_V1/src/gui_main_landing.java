@@ -35,8 +35,7 @@ public class gui_main_landing extends JDialog {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					
+				try {					
 					GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 					GraphicsDevice gd = env.getDefaultScreenDevice();
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); //uses os window manager
@@ -46,8 +45,7 @@ public class gui_main_landing extends JDialog {
 					dialog.setResizable(false);					
 					gd.setFullScreenWindow(dialog);
 					Rectangle bounds = env.getMaximumWindowBounds();
-					dialog.setBounds(bounds);
-					
+					dialog.setBounds(bounds);		
 				  
 				} 
 				
@@ -76,7 +74,7 @@ public class gui_main_landing extends JDialog {
 		JButton btnSaveChanges = new JButton("Save Changes");
 		ImageIcon save_one_icon = new ImageIcon("graphics_resources/save_one.png");
 		btnSaveChanges.setIcon(save_one_icon);
-		btnSaveChanges.setBounds(411, 488, 114, 23);
+		btnSaveChanges.setBounds(411, 488, 150, 23);
 		getContentPane().add(btnSaveChanges);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -139,11 +137,13 @@ public class gui_main_landing extends JDialog {
 		menuBar.add(mnHelp);
 		
 		JButton btnSaveAll = new JButton("Save All");
-		btnSaveAll.setBackground(Color.WHITE);
+		btnSaveAll.setForeground(Color.WHITE);
+		btnSaveAll.setBackground(Color.BLACK);
 		menuBar.add(btnSaveAll);
 		
 		JButton btnExit = new JButton("Exit");
-		btnExit.setBackground(Color.WHITE);
+		btnExit.setForeground(Color.WHITE);
+		btnExit.setBackground(Color.BLACK);
 		menuBar.add(btnExit);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
