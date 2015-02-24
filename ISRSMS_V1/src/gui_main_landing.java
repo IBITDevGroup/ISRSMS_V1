@@ -24,6 +24,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.JSpinner;
 import javax.swing.JFormattedTextField;
+import javax.swing.JList;
 
 //INCOMPLTE; MAJOR WIP
 public class gui_main_landing extends JDialog {
@@ -67,6 +68,16 @@ public class gui_main_landing extends JDialog {
 		setBounds(0, 0,screen.width,screen.height - 30);		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
+		
+		JList list = new JList();
+		list.setBounds(411, 11, 939, 466);
+		getContentPane().add(list);
+		
+		JButton btnSaveChanges = new JButton("Save Changes");
+		ImageIcon save_one_icon = new ImageIcon("graphics_resources/save_one.png");
+		btnSaveChanges.setIcon(save_one_icon);
+		btnSaveChanges.setBounds(411, 488, 114, 23);
+		getContentPane().add(btnSaveChanges);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);

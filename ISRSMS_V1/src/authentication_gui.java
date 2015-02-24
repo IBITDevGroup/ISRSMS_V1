@@ -79,7 +79,7 @@ public class authentication_gui extends JDialog {
 		contentPanel.add(lblerror);
 		
 		JLabel labelimg = new JLabel("");		
-		ImageIcon img_logo = new ImageIcon("graphics_resources/isr1.png"); //creates ImageIcon object
+		ImageIcon img_logo = new ImageIcon("graphics_resources/isr1.png"); //creates Image icon object in order to set the icon of the above JLabel.
 		labelimg.setIcon(img_logo);				
 		labelimg.setBounds(357, 31, 75, 52);
 		contentPanel.add(labelimg);
@@ -107,14 +107,11 @@ public class authentication_gui extends JDialog {
 					
 					//Initializes error message string 
 					String x = "Wrong Username or password! Try Again!";
-					
-					
+						
 					
 					//temporary if else loop for authentication (will be replaced by database-based system hard-coded in another class
 					if (user.equals("Tim") && pswd.equals("hallo")){
-					
-
-					
+						
 						
 					//disposes of authentication GUI, purges it from memory
 					dispose();	
