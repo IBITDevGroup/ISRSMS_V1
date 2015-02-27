@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import java.awt.Frame;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 
@@ -14,17 +15,27 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
 import javax.swing.ImageIcon;
+
 import java.awt.Color;
+
 import javax.swing.JInternalFrame;
 import javax.swing.JTabbedPane;
 import javax.swing.JSpinner;
 import javax.swing.JFormattedTextField;
 import javax.swing.JList;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.CompoundBorder;
 
 //INCOMPLTE; MAJOR WIP
 public class gui_main_landing extends JDialog {
@@ -38,14 +49,15 @@ public class gui_main_landing extends JDialog {
 				try {					
 					GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 					GraphicsDevice gd = env.getDefaultScreenDevice();
-					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); //uses os window manager
 					gui_main_landing dialog = new gui_main_landing();
+					//UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 					dialog.setResizable(false);					
 					gd.setFullScreenWindow(dialog);
 					Rectangle bounds = env.getMaximumWindowBounds();
-					dialog.setBounds(bounds);		
+					dialog.setBounds(bounds);
+					
 				  
 				} 
 				
@@ -62,20 +74,41 @@ public class gui_main_landing extends JDialog {
 	 * Create the dialog.
 	 */
 	public gui_main_landing() {
+		
+		ImageIcon cheap_logo = new ImageIcon("graphics_resources/cheap_logo.png"); //creates logo icon
+		
 		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 		setBounds(0, 0,screen.width,screen.height - 30);		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
-		JList list = new JList();
-		list.setBounds(411, 11, 939, 466);
-		getContentPane().add(list);
+		JInternalFrame internalFrame = new JInternalFrame("Student Browser");
+		internalFrame.setBorder(new EtchedBorder(EtchedBorder.RAISED, Color.GRAY, Color.WHITE));
+		internalFrame.setBounds(10, 11, 412, 965);	
+		internalFrame.setResizable(true);
+		internalFrame.setFrameIcon(cheap_logo);
+		getContentPane().add(internalFrame);
 		
-		JButton btnSaveChanges = new JButton("Save Changes");
-		ImageIcon save_one_icon = new ImageIcon("graphics_resources/save_one.png");
-		btnSaveChanges.setIcon(save_one_icon);
-		btnSaveChanges.setBounds(411, 488, 150, 23);
-		getContentPane().add(btnSaveChanges);
+		JInternalFrame internalFrame_1 = new JInternalFrame("Main");
+		internalFrame_1.setBorder(new EtchedBorder(EtchedBorder.RAISED, Color.GRAY, Color.WHITE));
+		internalFrame_1.setBounds(432, 11, 1462, 625);
+		internalFrame_1.setResizable(true);
+		internalFrame_1.setFrameIcon(cheap_logo);
+		getContentPane().add(internalFrame_1);
+		
+		JInternalFrame internalFrame_2 = new JInternalFrame("Quick Access");
+		internalFrame_2.setAutoscrolls(true);
+		internalFrame_2.setBorder(new EtchedBorder(EtchedBorder.RAISED, Color.GRAY, new Color(255, 255, 255)));
+		internalFrame_2.setBounds(432, 647, 1462, 329);
+		internalFrame_2.setResizable(true);
+		internalFrame_2.setFrameIcon(cheap_logo);
+		
+		getContentPane().add(internalFrame_2);
+		internalFrame_2.setVisible(true);
+		internalFrame_1.setVisible(true);
+		internalFrame.setVisible(true);
+		
+		ImageIcon save_one_icon = new ImageIcon("graphics_resources/save_one.png"); //Creates save one icon
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -104,7 +137,7 @@ public class gui_main_landing extends JDialog {
 		mntmUndo.setIcon(new ImageIcon(gui_main_landing.class.getResource("/com/sun/javafx/scene/web/skin/Undo_16x16_JFX.png")));
 		mnFile.add(mntmUndo);
 		
-		JMenuItem mntmRedo = new JMenuItem("Redo                               ");
+		JMenuItem mntmRedo = new JMenuItem("Redo"               );
 		mntmRedo.setIcon(new ImageIcon(gui_main_landing.class.getResource("/com/sun/javafx/scene/web/skin/Redo_16x16_JFX.png")));
 		mnFile.add(mntmRedo);
 		
