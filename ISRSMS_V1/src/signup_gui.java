@@ -87,10 +87,10 @@ public class signup_gui extends JDialog {
 			contentPanel.add(lblRetypePassword);
 		}
 		
-		psswd = new JPasswordField();
-		psswd.setToolTipText("Enter Password here.");
-		psswd.setBounds(224, 184, 200, 20);
-		contentPanel.add(psswd);
+		    psswd = new JPasswordField();
+		    psswd.setToolTipText("Enter Password here.");
+		    psswd.setBounds(224, 184, 200, 20);
+		    contentPanel.add(psswd);
 		{
 			psswdconfirm = new JPasswordField();
 			psswdconfirm.setToolTipText("Re-type the above.");
@@ -155,9 +155,9 @@ public class signup_gui extends JDialog {
 					  usernameresults.close();
 					  
 					  
-					    if(count > 1){
-					    	if(psswd == psswdconfirm){
-					    		if(adminpsswd == "admin"){  //Not permanent, have to replace once MySQL server is up!
+					    if(count == 0){
+					    	if(psswd.equals(psswdconfirm)){
+					    		if(adminpsswd.equals("admin")){  //Not permanent, have to replace once MySQL server is up!
 					    			
 					    			String queryadd = "insert into login_data (username, password) values (?,?) "; //adds entries to sqlite table for login info!
 					    			PreparedStatement pst_add = signupconnection.prepareStatement(queryadd);
@@ -168,10 +168,10 @@ public class signup_gui extends JDialog {
 					    		
 					    			JOptionPane.showMessageDialog(null, "Data saved!");   
 					    			
-					    			pst_add.close();
+					    			dispose();
 					    			
-					    			
-					    			
+					    		    pst_add.close();
+					    		    					    			
 					    		}
 					    		else{
 					    		  JOptionPane.showMessageDialog(null, "The Admin Password is incorrect!");   	
@@ -179,12 +179,11 @@ public class signup_gui extends JDialog {
 					    		
 					    	}				    	
 					    	else{
-					    	  JOptionPane.showMessageDialog(null, "Your passwords do not match!");
+					    	  JOptionPane.showMessageDialog(null, "Your Passwords do not match!");
 					    	  }    	
 					    	
-					    }
-					    
-					    
+					       }
+					    					    
 					  
 					    else{
 					      JOptionPane.showMessageDialog(null, "Your username is already taken!");	
