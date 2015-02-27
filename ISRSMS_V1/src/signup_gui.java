@@ -22,7 +22,7 @@ import java.sql.ResultSet;
 
 //NOT FULLY FUNCTIONAL YET! HAVE TO DEBUG SOMETIME SOON!
 
-public class signup_gui extends JDialog {
+public class signup_gui extends JDialog{
 
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtusername;
@@ -121,7 +121,7 @@ public class signup_gui extends JDialog {
 			{
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
+					public void actionPerformed(ActionEvent e){
 					
 					String username = txtusername.getText();
 					
