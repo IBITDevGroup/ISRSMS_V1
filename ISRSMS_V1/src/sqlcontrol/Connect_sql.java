@@ -3,6 +3,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 public class Connect_sql {
 	
 	 public static void main(String[] args) {
@@ -13,21 +15,20 @@ public class Connect_sql {
 
         Class.forName("com.mysql.jdbc.Driver").newInstance();
     } catch (Exception ex) {
-        System.out.println("Error");
+        JOptionPane.showMessageDialog(null, ex);
     }
-	try {
+	  try {
 	    conn =
-	       DriverManager.getConnection("jdbc:mysql://localhost/test?" +
-	                                   "user=monty&password=greatsqldb");
+	       DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=monty&password=greatsqldb");
 
 	    // Do something with the Connection
 
 	  
 	} catch (SQLException ex) {
 	    // handle any errors
-	    System.out.println("SQLException: " + ex.getMessage());
-	    System.out.println("SQLState: " + ex.getSQLState());
-	    System.out.println("VendorError: " + ex.getErrorCode());
+	    JOptionPane.showMessageDialog(null, ex.getMessage());
+	    JOptionPane.showMessageDialog(null, ex.getSQLState());
+	    JOptionPane.showMessageDialog(null, ex.getErrorCode());
 	}
 	
 	
