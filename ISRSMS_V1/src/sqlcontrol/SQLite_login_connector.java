@@ -1,3 +1,4 @@
+package sqlcontrol;
 import java.sql.*;
 import javax.swing.*;
 

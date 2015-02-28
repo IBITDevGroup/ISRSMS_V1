@@ -1,3 +1,5 @@
+package GUI;
+import sqlcontrol.*;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Frame;
@@ -50,13 +52,14 @@ public class gui_main_landing extends JDialog {
 					GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
 					GraphicsDevice gd = env.getDefaultScreenDevice();
 					gui_main_landing dialog = new gui_main_landing();
-					//UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 					dialog.setResizable(false);					
 					gd.setFullScreenWindow(dialog);
 					Rectangle bounds = env.getMaximumWindowBounds();
 					dialog.setBounds(bounds);
+					
+					UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
 					
 				  
 				} 

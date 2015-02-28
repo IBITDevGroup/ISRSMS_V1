@@ -1,3 +1,5 @@
+package GUI.authentication;
+import sqlcontrol.*;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
