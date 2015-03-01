@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="ISRSMS_V1/src"/>
-	<classpathentry kind="src" path="chat"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="external_jars/SQLite_jdbc_jars/sqlite-jdbc-3.7.15-M1.jar"/>
 	<classpathentry kind="lib" path="external_jars/SQLite_jdbc_jars/sqlite-jdbc-3.7.15-SNAPSHOT-2.jar"/>
