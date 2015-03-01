@@ -97,7 +97,7 @@ public class gui_main_landing extends JDialog {
 		internalFrame_1.setBounds(432, 11, 1462, 625);
 		internalFrame_1.setResizable(true);
 		internalFrame_1.setFrameIcon(cheap_logo);
-		getContentPane().add(internalFrame_1);
+		getContentPane().add(internalFrame_1);	
 		
 		JInternalFrame internalFrame_2 = new JInternalFrame("Quick Access");
 		internalFrame_2.setAutoscrolls(true);
@@ -119,7 +119,7 @@ public class gui_main_landing extends JDialog {
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
-		JMenu mnNew = new JMenu("New");
+		JMenu mnNew = new JMenu("Add");
 		ImageIcon new_icon = new ImageIcon("graphics_resources/new.png");
 		mnNew.setIcon(new_icon);
 		mnFile.add(mnNew);
@@ -172,7 +172,7 @@ public class gui_main_landing extends JDialog {
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		
-		JButton btnSaveAll = new JButton("Save All");
+		JButton btnSaveAll = new JButton("Refresh");
 		btnSaveAll.setForeground(Color.WHITE);
 		btnSaveAll.setBackground(Color.DARK_GRAY);
 		menuBar.add(btnSaveAll);
@@ -181,6 +181,11 @@ public class gui_main_landing extends JDialog {
 		btnExit.setForeground(Color.WHITE);
 		btnExit.setBackground(Color.DARK_GRAY);
 		menuBar.add(btnExit);
+		
+		JButton btnChat = new JButton("Chat");
+		btnChat.setForeground(Color.WHITE);
+		btnChat.setBackground(Color.DARK_GRAY);
+		menuBar.add(btnChat);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
