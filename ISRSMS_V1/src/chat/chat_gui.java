@@ -147,6 +147,8 @@ public void Disconnect() {
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 					dialog.setResizable(false);
+					dialog.setAlwaysOnTop(true);
+					dialog.setAutoRequestFocus(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -263,6 +265,7 @@ public void Disconnect() {
 		                lblDisconnected.setText("Disconnected!");
 		            }
 		            
+		            //penis! Malte ist ein hurensohn!!
 		            ListenThread();
 		        } else if (isConnected == true) {
 		            chatTextArea.append("You are already connected. \n");		            

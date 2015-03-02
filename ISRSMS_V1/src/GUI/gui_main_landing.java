@@ -1,5 +1,9 @@
 package GUI;
+
+import chat.chat_gui;
+
 import sqlcontrol.*;
+
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Frame;
@@ -38,6 +42,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.CompoundBorder;
+import java.awt.SystemColor;
 
 //INCOMPLTE; MAJOR WIP
 public class gui_main_landing extends JDialog {
@@ -59,6 +64,7 @@ public class gui_main_landing extends JDialog {
 					Rectangle bounds = env.getMaximumWindowBounds();
 					dialog.setBounds(bounds);
 					
+					
 					UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
 					
 				  
@@ -77,6 +83,7 @@ public class gui_main_landing extends JDialog {
 	 * Create the dialog.
 	 */
 	public gui_main_landing() {
+		getContentPane().setBackground(SystemColor.controlHighlight);
 		
 		ImageIcon cheap_logo = new ImageIcon("graphics_resources/cheap_logo.png"); //creates logo icon
 		
@@ -178,9 +185,24 @@ public class gui_main_landing extends JDialog {
 		menuBar.add(btnSaveAll);
 		
 		JButton btnChat = new JButton("Chat");
+		btnChat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				chat_gui chat = new chat_gui();
+				chat.setVisible(true);
+				chat.setAlwaysOnTop(true);
+				chat.setAutoRequestFocus(true);
+				
+			}
+		});
 		btnChat.setForeground(Color.WHITE);
 		btnChat.setBackground(Color.DARK_GRAY);
 		menuBar.add(btnChat);
+		
+		//sets JInternalFrames mmobile. does not function! Have to double-check!
+		internalFrame.putClientProperty("dragMode", "fixed");
+		internalFrame_1.putClientProperty("dragMode", "fixed");
+		internalFrame_2.putClientProperty("dragMode", "fixed");
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.setForeground(Color.WHITE);
